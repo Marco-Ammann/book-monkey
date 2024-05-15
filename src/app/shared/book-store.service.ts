@@ -30,6 +30,11 @@ export class BookStoreService {
   }
 
   getAll(): Book[] {
+    console.table(this.books);
     return this.books;
+  }
+
+  getSingle(isbn: string): Book | undefined {
+    return this.books.find((book) => book.isbn === isbn);
   }
 }
